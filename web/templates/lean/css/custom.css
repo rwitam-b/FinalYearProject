@@ -1,0 +1,312 @@
+/*
+// Put all custom styles here*/
+.blog-page-title-area{
+    float: left;
+}
+.blog-page-title-area h2.title,.blog-page-title-area h4.desc{
+    margin-top: 0px;
+}
+.breadcrumb{
+    padding: 0;
+    background: transparent;
+    float: right;
+}
+.breadcrumb>.active,.breadcrumb>li+li:before{
+    color: #fff;
+}
+
+.blog-page-design-area,.footer-area {
+  position: relative;
+}
+
+.blog-page-design-area img,.footer-area img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+  overflow: hidden;
+  width: 100%;
+  height:100%;
+  transition: .5s ease;
+}
+
+.blog-category a{
+    color: #333;
+}
+.blog-category .tag a{
+    color: #fff;
+}
+
+div.itemAuthorLatest ul {
+    margin-top: 20px;
+    padding: 0px;
+    list-style: none;
+}
+
+div.itemAuthorBlock {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    margin: 20px 0 20px 0;
+    padding: 8px;
+    float: left;
+    width: 100%;
+}
+
+div.itemAuthorBlock img.itemAuthorAvatar {
+    float: left;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.blog-widget ul{
+    padding: 0px;
+}
+
+.k2ContentPost .latest-post {
+    margin: 10px 0;
+    float: left;
+    width: 100%;
+}
+
+.single-side-bar .contact-form{
+    margin-top: 0px;
+}
+
+/* Blog Pagination */
+.pagination {
+    padding: 0;
+    display: block;
+}
+.blog-pagination {
+    list-style: none;
+}
+.blog-pagination li {
+    display: inline-block
+}
+
+
+.blog-pagination li a {
+    background-color: transparent;
+    color: #353535; 
+    position: relative;
+    float: left;
+    border-radius: 0px;
+    border: 1px solid #e8e8e9;
+    font-family: roboto, sans-serif;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin: 5px;
+    text-align: center;
+}
+.blog-pagination li a:hover,.blog-pagination li.disabled a:hover,.blog-pagination>.active>a, .blog-pagination>.active>a:focus, 
+.blog-pagination>.active>a:hover, .blog-pagination>.active>span, 
+.blog-pagination>.active>span:focus, .blog-pagination>.active>span:hover { 
+    color: #fff;  
+}
+.blog-pagination li a i { 
+    font-size: 16px; 
+}
+.blog-pagination li a:hover {
+    cursor: pointer;
+}
+.blog-pagination li.disabled a:hover{
+    cursor: not-allowed;
+}
+
+
+.archive-filters p {
+    margin: 0;
+}
+
+.archive-filters a {
+    padding-left: 18px;
+}
+.archive-filters p {
+    display: inline;
+}
+
+.archive-filters a{
+    display: inline-block;
+    padding: 0 14px;
+    font: 600 11px 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0 3px 10px 3px;
+    background-color: transparent;
+    border: none;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    -ms-transition: all .2s;
+    transition: all .2s;
+}
+
+.taglist_content{
+    float: left;
+    width: 100%;
+}
+.taglist_content .cbp-item{
+    margin: 0px;
+}
+
+.flt_width{
+    float: left;
+    width: 100%;
+}
+
+.k2contentimg img{
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.k2contentimg p.date{
+    font-size: 13px;
+    line-height: 13px;
+    margin: 0px;
+}
+
+@media ( max-width: 767px ) {
+    .dropdown-menu {
+        position: relative;
+        float: left;
+        width: 100%;
+        padding: 0px 0px 5px 0px;
+    }
+
+    .modal-dialog{
+        margin: 0px;
+    }    
+}
+
+
+.modal-dialog{
+    width: 1000px;
+    max-width: 100%;
+}
+.modal-dialog .modal_body{
+    padding: 20px;
+    border: 5px solid #777;
+}
+.sp-simpleportfolio-item .caption-activeWrap {
+    opacity: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, .8);
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.caption-activeWrap {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+}
+
+
+.sp-simpleportfolio .sp-simpleportfolio-item .caption:hover .caption-activeWrap {
+    opacity: 1;
+}
+.caption-activeWrap {
+    display: block;
+}
+
+.modal-content{
+    border-radius: 0px;
+}
+
+.modal-content .item_info{
+    padding: 20px 20px 15px 10px;
+}
+
+.folio-details {
+    float: left;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.folio-details .about-content-text p {
+    margin: 20px 0 15px 0;
+    font-size: 14px;
+    text-align: justify;
+}
+
+h3.title-project-detail {
+    position: relative;
+    margin-top: 0px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #121212;
+    margin-bottom: 20px;
+}
+
+ul.entry-details-content{
+    padding: 0px;
+}
+.entry-details-content li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 0 10px 0px;
+    position: relative;
+}
+
+.pg_login_form input[type="text"],.pg_login_form input[type="password"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 54px;
+    margin: 0;
+    font: 300 12px 'Poppins', sans-serif;
+    letter-spacing: .2px;
+    color: #9d9d9d;
+    background-color: rgba(0, 0, 0, .05);
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    outline: none;
+    padding: 15px 20px;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    transition: background-color .3s;
+}
+.pg_login_form .control-label, .pg_login_form .controls {
+    padding-top: 0px;
+    margin-top: 20px;
+}
+
+div.itemContainer{
+    margin-bottom: 30px;
+}
+
+.sp-simpleportfolio-item:hover .modal_body img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}

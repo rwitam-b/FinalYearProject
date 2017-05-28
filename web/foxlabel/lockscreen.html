@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cryptex</title>
+    <!-- Css Files -->
+    <link href="css/root.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                background: #F5F5F5;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="lock-word animated fadeInDown">
+        <span class="first-word">LOCKED</span><span>SCREEN</span>
+    </div>
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <div class="m-b-md">
+                <img alt="image" class="img-circle circle-border" src="img/lockscreen.png">
+            </div>
+            <h3>John Smith</h3>
+            <p>Your are in lock screen. Main app was shut down and you need to enter your passwor to go back to app.</p>
+            <form class="m-t" action="http://cpbootstrap.com/foxlabel/index.html">
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="******" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width" onclick="window.location.replace('index.html')">Unlock</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

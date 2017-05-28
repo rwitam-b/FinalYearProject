@@ -1,0 +1,34 @@
+#style-switcher h2 a {
+    background: #58C433 none repeat scroll 0 0
+}
+
+.breadcrumb li a, .footer-text a,
+.blog-category a:hover, .menu-bg .mainmenu .navbar-nav li a:hover, .slider-control, .service-icon i, .single-service.single-service:hover h4, .team-social ul li a, .testi-name h2, .pricing-header i, .plan-price p, .contact-icon i, .footer-social-link ul li a, .slider-control:hover, .mainmenu .navbar-nav li a:hover, .menu-bg .logo a p, .menu-bg .header-social-links ul li a, .single-project-complete i, .footer-menu ul li a:hover, .menu-bg .mainmenu .navbar-nav li.active a, .post-date span i, .single-side-bar ul li a:hover, .single-comment a:hover{
+    color: #58C433;
+}
+
+a.slide-btn, a.read-more, .call-to-area-text a, a.plan-more, .contact-form input[type="submit"], .owl-theme .owl-controls .owl-page span, ul.blog_pagination li a:hover, .tag a, .single-side-bar button, .comment-form-area button{
+	border: 1px solid #58C433;
+	background-color: #58C433;
+}
+
+.blog-pagination li a:hover,.blog-pagination li.disabled a:hover,.blog-pagination>.active>a, .blog-pagination>.active>a:focus, 
+.blog-pagination>.active>a:hover, .blog-pagination>.active>span, 
+.blog-pagination>.active>span:focus, .blog-pagination>.active>span:hover,
+.section-title h2::before, .scrollup, .dot1, .carousel-indicators li, a.slide-btn.other-btn:hover, .active-box::before, .blog-carosel-control, .black-icon, .single-comment a:hover i{
+	background: #58C433 !important;
+}
+
+.team-description {
+	border-top: 2px solid #58C433;
+}
+
+.blog-pagination li a:hover,.blog-pagination li.disabled a:hover,.blog-pagination>.active>a, .blog-pagination>.active>a:focus, 
+.blog-pagination>.active>a:hover, .blog-pagination>.active>span, 
+.blog-pagination>.active>span:focus, .blog-pagination>.active>span:hover,
+.pricing-box:hover a.plan-more, a.read-more:hover, .call-to-area-text a:hover, a.read-more:hover, .contact-form input[type="submit"]:hover, a.slide-btn:hover, .tag a:hover, .single-side-bar button:hover, .single-side-bar input, .single-side-bar input:hover, .single-side-bar input:focus, .comment-form-area input:hover, .comment-form-area input:focus, .comment-form-area textarea:hover, .comment-form-area textarea:focus{
+	border: 1px solid #58C433;
+}
+.form-control:focus {
+	border-color: #58C433;
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../plugins/images/admin-logo-dark.png">
+    <title>Cryptex</title>
+    <!-- Css Files -->
+    <link href="css/root.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Start Page Loading -->
+    <div class="loading"><img src="img/loading.gif" alt="loading-img"></div>
+    <!-- End Page Loading --> 
+    <!-- Start Top -->
+    <div id="top" class="clearfix"> 
+        <!-- Start App Logo -->
+        <div class="applogo"> <a href="index.html" class="logo">Cryptex</a> </div>
+        <!-- End App Logo --> 
+        <!-- End Sidebar Show Hide Button --> 
+        <!-- Start Searchbox -->
+        <form class="searchform">
+            <input type="text" class="searchbox" id="searchbox" placeholder="Search for something...">
+                <span class="searchbutton"><i class="fa fa-search"></i></span>
+        </form>
+        <!-- End Searchbox --> 
+        <!-- Start Sidepanel Show-Hide Button --> 
+        <!-- End Sidepanel Show-Hide Button --> 
+        <!-- Start Top Right -->
+        <ul class="top-right">
+            <li class="dropdown dropdown-notification nav-item link"><a href="#" data-toggle="dropdown" class="nav-link nav-link-label count-info"><span class="label label-warning">6</span><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                    <li class="dropdown-menu-header">
+                        <h6 class="dropdown-header"><span>Notifications</span><span class="pull-right label label-danger">6 New</span></h6>
+                    </li>
+                    <li class="list-group"><a href="#" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left valign-middle"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="media-body">
+                                    <h6 class="media-heading color10">You have new order!</h6>
+                                    <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                    <small>
+                                        <time datetime="2017-02-14 20:00" class="media-meta text-muted">30 minutes ago</time>
+                                    </small> </div>
+                            </div>
+                        </a><a href="#" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left valign-middle"><i class="fa fa-desktop"></i></div>
+                                <div class="media-body">
+                                    <h6 class="media-heading darken-1 color7">99% Server load</h6>
+                                    <p class="notification-text font-small-3 text-muted">Aliquam tincidunt mauris eu risus.</p>
+                                    <small>
+                                        <time datetime="2017-02-14 20:00" class="media-meta text-muted">30 minutes ago</time>
+                                    </small> </div>
+                            </div>
+                        </a><a href="#" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left valign-middle"><i class="fa fa-server"></i></div>
+                                <div class="media-body">
+                                    <h6 class="media-heading color9">Warning notifixation</h6>
+                                    <p class="notification-text font-small-3 text-muted">Vestibulum auctor dapibus neque.</p>
+                                    <small>
+                                        <time datetime="2017-02-14 20:00" class="media-meta text-muted">30 minutes ago</time>
+                                    </small> </div>
+                            </div>
+                        </a><a href="#" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left valign-middle"><i class="fa fa-check"></i></div>
+                                <div class="media-body">
+                                    <h6 class="media-heading color11">Complete the task</h6>
+                                    <small>
+                                        <time datetime="2017-02-14 20:00" class="media-meta text-muted">30 minutes ago</time>
+                                    </small> </div>
+                            </div>
+                        </a><a href="#" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left valign-middle"><i class="fa fa-bar-chart"></i></div>
+                                <div class="media-body">
+                                    <h6 class="media-heading">Generate monthly report</h6>
+                                    <small>
+                                        <time datetime="2017-02-14 20:00" class="media-meta text-muted">30 minutes ago</time>
+                                    </small> </div>
+                            </div>
+                        </a></li>
+                    <li class="dropdown-menu-footer"><a href="#" class="dropdown-item text-muted text-center">Read all notifications</a></li>
+                </ul>
+            </li>
+            <li class="dropdown link"> <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img src="img/profileimg.png" alt="img"><b>John Doe</b><span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+                    <li role="presentation" class="dropdown-header">Profile</li>
+                    <li><a href="#"><i class="fa falist fa-inbox"></i>Inbox<span class="badge label-danger">2</span></a></li>
+                   
+                    <li class="divider"></li>
+                    <li><a href="lockscreen.html"><i class="fa falist fa-lock"></i> Lockscreen</a></li>
+                    <li><a href="../index.html"><i class="fa falist fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- End Top Right --> 
+    </div>
+    <!-- End Top --> 
+    <!-- Start Sidebar -->
+    <!-- End Sidebar --> 
+    <!-- Start Content -->
+    <div class="content "> 
+        <!-- Start Container -->
+        <div class="container-widget animated fadeInRight"> 
+            <!-- Start Top Stats -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <span class="pull-right"><span data-diameter="40" class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span></span> Time Left </div>
+                        <div class="panel-body">
+                            <h1 class="no-margins">886,200</h1>
+                            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                            <small>Time Utilization</small> </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-title"><span class="pull-right"><span class="line">5,3,2,-1,-3,-2,2,3,5,2</span></span> Uploads </div>
+                        <div class="panel-body">
+                            <h1 class="no-margins">275,800</h1>
+                            <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+                            <small>New Uploads</small> </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-title"><span class="pull-right"><span class="bar">5,3,9,6,5,9,7,3,5,2</span></span> Downloads </div>
+                        <div class="panel-body">
+                            <h1 class="no-margins">106,120</h1>
+                            <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
+                            <small>New Downloads</small> </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-title"><span class="pull-right"><span class="pie">226,134</span></span> User activity </div>
+                        <div class="panel-body">
+                            <h1 class="no-margins">80,600</h1>
+                            <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
+                            <small>Totsl Visits</small> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Stats --> 
+            <!-- Start First Row -->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="panel panel-widget">
+                        <div class="panel-body table-responsive">
+                            <div class="col-lg-6">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 1%" class="text-center">No.</th>
+                                            <th>Transaction</th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td> Security doors
+                                            </td>
+                                            <td class="text-center small">16 Jun 2014</td>
+                                            <td class="text-center"><span class="label label-primary">$483.00</span></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td> Wardrobes
+                                            </td>
+                                            <td class="text-center small">10 Jun 2014</td>
+                                            <td class="text-center"><span class="label label-primary">$327.00</span></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td> Set of tools
+                                            </td>
+                                            <td class="text-center small">12 Jun 2014</td>
+                                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td> Panoramic pictures</td>
+                                            <td class="text-center small">22 Jun 2013</td>
+                                            <td class="text-center"><span class="label label-primary">$344.00</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td>Phones</td>
+                                            <td class="text-center small">24 Jun 2013</td>
+                                            <td class="text-center"><span class="label label-primary">$235.00</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">6</td>
+                                            <td>Monitors</td>
+                                            <td class="text-center small">26 Jun 2013</td>
+                                            <td class="text-center"><span class="label label-primary">$100.00</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div id="world-map" style="height: 300px;"></div>
+                            </div> 
+                        </div>
+                    </div></div>
+            </div>
+
+            <!-- End First Row --> 
+            <!-- Start Fourth Row -->
+            <div class="row"> 
+                <!-- Start Project Stats -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-title"> Order Stats </div>
+                        <div class="panel-body">
+                            <div>
+                                <div id="slineChart" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Project Stats -->
+                <div class="col-md-12 col-lg-6">
+                    <div class="panel panel-widget">
+                        <div class="panel-title"> Projects Stats <span class="label label-info">63</span>
+                            <ul class="panel-tools">
+                                <li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
+                                <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                <li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="panel-search">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search...">
+                                    <i class="fa fa-search icon"></i>
+                            </form>
+                        </div>
+                        <div class="panel-body table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Project</td>
+                                        <td>Status</td>
+                                        <td class="text-right">Progress</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>965</td>
+                                        <td>Dashboard Template</td>
+                                        <td><span class="label label-default">Developing</span></td>
+                                        <td class="text-right"><span class="demo-project-stats"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>620</td>
+                                        <td>EBI iOS Application</td>
+                                        <td><span class="label label-warning">Design</span></td>
+                                        <td class="text-right"><span class="demo-project-stats"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>621</td>
+                                        <td>Landing Page</td>
+                                        <td><span class="label label-info">Testing</span></td>
+                                        <td class="text-right"><span class="demo-project-stats"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>621</td>
+                                        <td>John Coffe Shop Logo</td>
+                                        <td><span class="label label-danger">Canceled</span></td>
+                                        <td class="text-right"><span class="demo-project-stats"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>621</td>
+                                        <td>BKM Website Design</td>
+                                        <td><span class="label label-primary">Reply waiting</span></td>
+                                        <td class="text-right"><span class="demo-project-stats"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Fourth Row --> 
+            <!-- Start Fifth Row -->
+            <div class="row"> 
+                <!-- Start Orders -->
+                <div class="col-md-12 col-lg-12">
+                    <div class="panel panel-widget">
+                        <div class="panel-title"> LAST ORDERS <span class="label label-warning">186</span>
+                            <ul class="panel-tools">
+                                <li><a class="icon search-tool"><i class="fa fa-search"></i></a></li>
+                                <li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
+                                <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                                <li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="panel-search">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search...">
+                                    <i class="fa fa-search icon"></i>
+                            </form>
+                        </div>
+                        <div class="panel-body table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <td class="text-center"><i class="fa fa-trash"></i></td>
+                                <td>Order ID</td>
+                                <td>Product</td>
+                                <td>Buyer</td>
+                                <td>Date</td>
+                                <td>Payment</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><div class="checkbox margin-t-0">
+                                    <input id="checkbox1" type="checkbox">
+                                        <label for="checkbox1"></label>
+                                </div></td>
+                                <td># <b>9652</b></td>
+                                <td>Gaming Laptop</td>
+                                <td>John Doe</td>
+                                <td>12/10/2017</td>
+                                <td>Credit Card</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><div class="checkbox margin-t-0">
+                                    <input id="checkbox2" type="checkbox">
+                                        <label for="checkbox2"></label>
+                                </div></td>
+                                <td># <b>1963</b></td>
+                                <td>New Season Jacket</td>
+                                <td>Jane Doe</td>
+                                <td>12/10/2017</td>
+                                <td>Paypal</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><div class="checkbox margin-t-0">
+                                    <input id="checkbox3" type="checkbox">
+                                        <label for="checkbox3"></label>
+                                </div></td>
+                                <td># <b>9652</b></td>
+                                <td>IO Mouse</td>
+                                <td>John Doe</td>
+                                <td>12/10/2017</td>
+                                <td>Credit Card</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><div class="checkbox margin-t-0">
+                                    <input id="checkbox4" type="checkbox">
+                                        <label for="checkbox4"></label>
+                                </div></td>
+                                <td># <b>9651</b></td>
+                                <td>Doe Bike</td>
+                                <td>John Doe</td>
+                                <td>12/10/2017</td>
+                                <td>Credit Card</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Orders --> 
+            </div>
+            <!-- End Fifth Row --> 
+        </div>
+        <!-- End Container --> 
+        <!-- Start Footer -->
+        <div class="row footer">
+            <div class="col-md-6 text-left"> Copyright &copy; 2017 <a href="http://cpbootstrap.com/foxlabel" target="_blank">Cryptex</a> All rights reserved. </div>
+            <div class="col-md-6 text-right"> Design and Developed by <a href="http://cpbootstrap.com/foxlabel" target="_blank">cryptex</a> </div>
+        </div>
+        <!-- End Footer --> 
+    </div>
+    <!-- End Content --> 
+    <!-- Start Sidepanel -->
+    <!-- End Sidepanel --> 
+    <!-- jQuery Library --> 
+    <script type="text/javascript" src="js/jquery.min.js"></script> 
+    <!-- Bootstrap Core JavaScript File --> 
+    <script src="js/bootstrap/bootstrap.min.js"></script> 
+    <!-- Plugin.js - Some Specific JS codes for Plugin Settings --> 
+    <script type="text/javascript" src="js/plugins.js"></script> 
+    <!-- Bootstrap Toggle --> 
+    <script type="text/javascript" src="js/bootstrap-toggle/bootstrap-toggle.min.js"></script> 
+    <!-- Jvectormap --> 
+    <script type="text/javascript" src="js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script><!-- main file --> 
+    <script type="text/javascript" src="js/jvectormap/jquery-jvectormap-world-mill-en.js"></script><!-- main file -->
+    <script type="text/javascript" src="js/jvectormap/jvectormap-plugin.js"></script><!-- demo codes --> 
+    <!-- C3 --> 
+    <script type="text/javascript" src="js/c3/d3.min.js"></script><!-- main file --> 
+    <script type="text/javascript" src="js/c3/c3.min.js"></script><!-- main file --> 
+    <script type="text/javascript" src="js/c3/c3-plugin.js"></script><!-- demo codes --> 
+    <!-- Peity Charts --> 
+    <script type="text/javascript" src="js/peity/jquery.peity.min.js"></script><!-- main file --> 
+    <script type="text/javascript" src="js/peity/peity-plugin.js"></script><!-- demo codes --> 
+    <!-- Data Tables --> 
+    <script src="js/datatables/datatables.min.js"></script> 
+    <!-- Sweet Alert --> 
+    <script src="js/sweet-alert/sweet-alert.min.js"></script> 
+    <!-- jQuery UI --> 
+    <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- MetisMenu --> 
+    <script type="text/javascript" src="js/metismenu/metisMenu.min.js"></script>
+    <!-- Toastr -->
+    <script src="js/toastr/toastr.min.js"></script>
+    <script src="js/toastr/toastr-plugin.js"></script>
+</body>
+
+</html>
