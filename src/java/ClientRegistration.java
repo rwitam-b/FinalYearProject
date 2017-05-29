@@ -36,7 +36,7 @@ public class ClientRegistration extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Bad GET Request");
+        System.out.println("Bad GET Request in ClientRegistration");
         response.getWriter().println("invalid request");
     }
 

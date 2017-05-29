@@ -4,9 +4,17 @@
         <servlet-name>ClientRegistration</servlet-name>
         <servlet-class>ClientRegistration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClientLogin</servlet-name>
+        <servlet-class>ClientLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClientRegistration</servlet-name>
         <url-pattern>/ClientRegistration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClientLogin</servlet-name>
+        <url-pattern>/ClientLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

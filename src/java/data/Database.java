@@ -3,6 +3,7 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import secretSharing.SecretShare;
 
@@ -45,7 +46,7 @@ public class Database {
     public void createDatabase(String db_name) {
         try {
             S = C.createStatement();
-            String sql = "CREATE DATABASE " + db_name;            
+            String sql = "CREATE DATABASE " + db_name;
             S.executeUpdate(sql);
             System.out.println("Database " + db_name + " created successfully !");
         } catch (Exception e) {
@@ -118,6 +119,47 @@ public class Database {
         } catch (Exception e) {
             System.out.println("Error Creating Login Table Entries !");
         }
+    }
+
+    public boolean checkLogin(String email, String password) {
+        boolean out = false;
+        try {
+            PS = C.prepareStatement("SELECT password FROM login WHERE email=?");
+            PS.setString(1, email);
+            ResultSet RS = PS.executeQuery();
+            if (!RS.isBeforeFirst()) {
+                System.out.println("User " + email + " is not registered !");
+            } else {
+                RS.next();
+                String dbPass = RS.getString("password");
+                if (dbPass.equals(password)) {
+                    out = true;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Sign-In For " + email);
+        }
+        return out;
+    }
+
+    public String getDB(String email) {
+        System.out.println("Attempting to retreive DB for " + email);
+        String out = "";
+        try {
+            PS = C.prepareStatement("SELECT db FROM login WHERE email=?");
+            PS.setString(1, email);
+            ResultSet RS = PS.executeQuery();
+            if (!RS.isBeforeFirst()) {
+                System.out.println("User " + email + " is not registered !");
+            } else {
+                RS.next();
+                out = RS.getString("db");
+                System.out.println("DB " + out + " fetched successfully for " + email);
+            }
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Retreive Database For " + email);
+        }
+        return out;
     }
 
     public void destroy() {
