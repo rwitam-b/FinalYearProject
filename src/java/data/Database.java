@@ -60,19 +60,19 @@ public class Database {
 
     }
 
-    public void createTable(String table) {
+    public void createTables() {
         try {
             S = C.createStatement();
             String sql = "";
-            if (table.equalsIgnoreCase("client_details")) {
-                sql = "CREATE TABLE client_details(company_name VARCHAR(50),plan VARCHAR(10),fname VARCHAR(20),lname VARCHAR(20),phone VARCHAR(10),address VARCHAR(100),key_meta VARCHAR(150))";
-            } else if (table.equalsIgnoreCase("participants")) {
-                sql = "CREATE TABLE participants(fname VARCHAR(20),lname VARCHAR(20),guid VARCHAR(20),share VARCHAR(100),online_status VARCHAR(1),otp VARCHAR(16))";
-            }
+            sql = "CREATE TABLE client_details(company_name VARCHAR(50),plan VARCHAR(10),fname VARCHAR(20),lname VARCHAR(20),phone VARCHAR(10),address VARCHAR(100),key_meta VARCHAR(150))";
             S.executeUpdate(sql);
-            System.out.println("Table " + table + " created successfully in database " + DB_URL.substring(DB_URL.lastIndexOf("/") + 1));
+            sql = "CREATE TABLE participants(fname VARCHAR(20),lname VARCHAR(20),guid VARCHAR(20),share VARCHAR(100),online_status VARCHAR(1),otp VARCHAR(16))";
+            S.executeUpdate(sql);
+            sql = "CREATE TABLE files (name VARCHAR(100),size VARCHAR(10),uploader VARCHAR(50),guid VARCHAR(20))";
+            S.executeUpdate(sql);
+            System.out.println("Tables created successfully in database " + DB_URL.substring(DB_URL.lastIndexOf("/") + 1));
         } catch (Exception e) {
-            System.out.println("Error Creating Table " + table + " in database " + DB_URL.substring(DB_URL.lastIndexOf("/") + 1));
+            System.out.println("Error Creating Tables in database " + DB_URL.substring(DB_URL.lastIndexOf("/") + 1));
         }
     }
 
@@ -216,6 +216,21 @@ public class Database {
             System.out.println("Error While Attempting To Sign-In For " + email);
         }
         return out;
+    }
+
+    public void updateFile(String file, String size, String uploader, String guid) {
+        System.out.println("Attempting to update file " + file + " for user " + uploader);
+        try {
+            PS = C.prepareStatement("INSERT INTO files VALUES(?,?,?,?)");
+            PS.setString(1, file);
+            PS.setString(2, size);
+            PS.setString(3, uploader);
+            PS.setString(4, guid);
+            int change = PS.executeUpdate();
+            System.out.println("File details recorded for " + file + " @" + uploader);
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Record File Details");
+        }
     }
 
     public String getDB(String email) {

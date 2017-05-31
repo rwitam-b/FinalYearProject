@@ -20,6 +20,14 @@
         <servlet-name>UserInvalidate</servlet-name>
         <servlet-class>UserInvalidate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FileUpload</servlet-name>
+        <servlet-class>FileUpload</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FileDetails</servlet-name>
+        <servlet-class>FileDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClientRegistration</servlet-name>
         <url-pattern>/ClientRegistration</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>UserInvalidate</servlet-name>
         <url-pattern>/UserInvalidate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileUpload</servlet-name>
+        <url-pattern>/FileUpload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileDetails</servlet-name>
+        <url-pattern>/FileDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

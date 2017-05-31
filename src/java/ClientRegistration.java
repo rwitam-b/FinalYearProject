@@ -86,8 +86,7 @@ public class ClientRegistration extends HttpServlet {
 
                 // Create tables in company database
                 DB = new Database(DB_LOCATION, db_name, "root", "");
-                DB.createTable("client_details");
-                DB.createTable("participants");
+                DB.createTables();
                 String key_meta = new SHA256(AES_Key).getChecksum() + sharingScheme.getPrime().toString(16);
                 DB.enterClientDetails(company, plan, fname, lname, phone, address, key_meta);
                 DB.enterParticipantDetails(participantFname, participantLname, participantId, sharingScheme.getShares());
