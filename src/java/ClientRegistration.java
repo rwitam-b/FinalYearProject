@@ -65,7 +65,7 @@ public class ClientRegistration extends HttpServlet {
             } else {
                 // Put details in login table
                 Database DB = new Database(DB_LOCATION, "data", "root", "");
-                DB.createLogin(email, new SHA256(password).getChecksum(), new SHA256(company).getChecksum());
+                DB.createLogin(email, new SHA256(password).getChecksum(), new SHA256(company).getChecksum().substring(0, 32));
                 DB.destroy();
 
                 // Create new company database

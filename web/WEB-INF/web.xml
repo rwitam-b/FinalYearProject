@@ -8,6 +8,18 @@
         <servlet-name>ClientLogin</servlet-name>
         <servlet-class>ClientLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Control</servlet-name>
+        <servlet-class>Control</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServerOTPCheck</servlet-name>
+        <servlet-class>ServerOTPCheck</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserInvalidate</servlet-name>
+        <servlet-class>UserInvalidate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClientRegistration</servlet-name>
         <url-pattern>/ClientRegistration</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>ClientLogin</servlet-name>
         <url-pattern>/ClientLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Control</servlet-name>
+        <url-pattern>/Control</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServerOTPCheck</servlet-name>
+        <url-pattern>/ServerOTPCheck</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserInvalidate</servlet-name>
+        <url-pattern>/UserInvalidate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

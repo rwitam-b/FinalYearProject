@@ -1,10 +1,12 @@
 package data;
 
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import org.apache.commons.codec.binary.Hex;
 import secretSharing.SecretShare;
 
 public class Database {
@@ -27,6 +29,7 @@ public class Database {
             System.out.println("Database Connectivity Established !");
         } catch (Exception e) {
             System.out.println("Database Connection Error !");
+            System.out.println(e);
         }
     }
 
@@ -64,7 +67,7 @@ public class Database {
             if (table.equalsIgnoreCase("client_details")) {
                 sql = "CREATE TABLE client_details(company_name VARCHAR(50),plan VARCHAR(10),fname VARCHAR(20),lname VARCHAR(20),phone VARCHAR(10),address VARCHAR(100),key_meta VARCHAR(150))";
             } else if (table.equalsIgnoreCase("participants")) {
-                sql = "CREATE TABLE participants(fname VARCHAR(20),lname VARCHAR(20),guid VARCHAR(20),share VARCHAR(100))";
+                sql = "CREATE TABLE participants(fname VARCHAR(20),lname VARCHAR(20),guid VARCHAR(20),share VARCHAR(100),online_status VARCHAR(1),otp VARCHAR(16))";
             }
             S.executeUpdate(sql);
             System.out.println("Table " + table + " created successfully in database " + DB_URL.substring(DB_URL.lastIndexOf("/") + 1));
@@ -94,16 +97,35 @@ public class Database {
         try {
             int recordsUpdated = 0;
             for (int a = 0; a < share.length; a++) {
-                PS = C.prepareStatement("INSERT INTO participants VALUES(?,?,?,?)");
+                PS = C.prepareStatement("INSERT INTO participants VALUES(?,?,?,?,?,?)");
                 PS.setString(1, fname[a]);
                 PS.setString(2, lname[a]);
                 PS.setString(3, guid[a]);
                 PS.setString(4, share[a].toString());
+                PS.setString(5, "N");
+                PS.setString(6, "");
                 recordsUpdated += PS.executeUpdate();
             }
             System.out.println("Successfully populated " + recordsUpdated + " participants in database !");
         } catch (Exception e) {
             System.out.println("Error Entering Values Into participants table !");
+        }
+    }
+
+    public void changeParticipantStatus(String guid, String status) {
+        System.out.println("Attempting to change online status for " + guid);
+        try {
+            PS = C.prepareStatement("UPDATE participants SET online_status=? WHERE guid=?");
+            PS.setString(1, status);
+            PS.setString(2, guid);
+            int change = PS.executeUpdate();
+            if (change == 0) {
+                System.out.println("User " + guid + " is not registered!");
+            } else {
+                System.out.println("User " + guid + " is now " + status + "!");
+            }
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Change Online Status For " + guid);
         }
     }
 
@@ -119,6 +141,60 @@ public class Database {
         } catch (Exception e) {
             System.out.println("Error Creating Login Table Entries !");
         }
+    }
+
+    public void generateOTP(String guid) {
+        System.out.println("Attempting to generate OTP for " + guid);
+        try {
+            byte[] otpBytes = new byte[8];
+            SecureRandom R = new SecureRandom();
+            R.nextBytes(otpBytes);
+            String otp = Hex.encodeHexString(otpBytes).toUpperCase();
+            PS = C.prepareStatement("UPDATE participants SET otp=? WHERE guid=?");
+            PS.setString(1, otp);
+            PS.setString(2, guid);
+            int change = PS.executeUpdate();
+            if (change == 0) {
+                System.out.println("User " + guid + " is not registered!");
+            } else {
+                System.out.println("OTP has been generated for GUID " + guid);
+            }
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Change Online Status For " + guid);
+        }
+    }
+
+    public boolean verifyOTP(String guid, String otp) {
+        boolean out = false;
+        System.out.println("Attempting to verify OTP for " + guid);
+        try {
+            PS = C.prepareStatement("SELECT otp FROM participants WHERE guid=?");
+            PS.setString(1, guid);
+            ResultSet RS = PS.executeQuery();
+            if (!RS.isBeforeFirst()) {
+                System.out.println("User " + guid + " is not registered!");
+            } else {
+                RS.next();
+                String dbOTP = RS.getString("otp");
+                System.out.println("OTP has been retreived from DB for GUID " + guid);
+                if (dbOTP.length() == 0) {
+                    System.out.println("User GUID@" + guid + " does not have a generated OTP at the moment !");
+                } else if (dbOTP.equals(otp)) {
+                    System.out.println("OTP verified! Redirecting to Cryptex");
+                    PS = C.prepareStatement("UPDATE participants SET otp=? WHERE guid=?");
+                    PS.setString(1, "");
+                    PS.setString(2, guid);
+                    int change = PS.executeUpdate();
+                    System.out.println("OTP cleared from DB for GUID " + guid);
+                    out = true;
+                } else {
+                    System.out.println("OTP doesn't match the generated OTP !");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error While Attempting To Verify OTP For " + guid);
+        }
+        return out;
     }
 
     public boolean checkLogin(String email, String password) {
