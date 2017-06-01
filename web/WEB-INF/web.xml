@@ -28,6 +28,14 @@
         <servlet-name>FileDetails</servlet-name>
         <servlet-class>FileDetails</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccessCheck</servlet-name>
+        <servlet-class>AccessCheck</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetOTP</servlet-name>
+        <servlet-class>GetOTP</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClientRegistration</servlet-name>
         <url-pattern>/ClientRegistration</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>FileDetails</servlet-name>
         <url-pattern>/FileDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccessCheck</servlet-name>
+        <url-pattern>/AccessCheck</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetOTP</servlet-name>
+        <url-pattern>/GetOTP</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

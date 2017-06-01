@@ -1,11 +1,13 @@
 package data;
 
+import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import org.apache.commons.codec.binary.Hex;
 import secretSharing.SecretShare;
 
@@ -162,6 +164,74 @@ public class Database {
         } catch (Exception e) {
             System.out.println("Error While Attempting To Change Online Status For " + guid);
         }
+    }
+
+    public String getOTP(String guid) {
+        String otp = "";
+        try {
+            PS = C.prepareStatement("SELECT * FROM participants WHERE guid=?");
+            PS.setString(1, guid);
+            ResultSet RS = PS.executeQuery();
+            RS.next();
+            otp = RS.getString("otp");
+            System.out.println("Retreived otp for " + guid + " successfully !");
+        } catch (Exception e) {
+            System.out.println("Error retreiving otp for " + guid);
+        }
+        return otp;
+    }
+
+    public String getKeyMeta() {
+        String out = "";
+        try {
+            PS = C.prepareStatement("SELECT key_meta FROM client_details");
+            ResultSet RS = PS.executeQuery();
+            RS.next();
+            out = RS.getString("key_meta");
+            System.out.println("KeyMeta Retreived Successfully!");
+        } catch (Exception e) {
+            System.out.println("Error retreiving KeyMeta!");
+        }
+        return out;
+    }
+
+    public SecretShare[] getOnlineShares() {
+        SecretShare[] shares = null;
+        try {
+            PS = C.prepareStatement("SELECT * FROM participants WHERE online_status=?");
+            PS.setString(1, "Y");
+            ResultSet RS = PS.executeQuery();
+            RS.last();
+            int count = RS.getRow();
+            shares = new SecretShare[count];
+            RS.beforeFirst();
+            int shareCounter = 0;
+            while (RS.next()) {
+                String shareString[] = RS.getString("share").split("-");
+                shares[shareCounter] = new SecretShare(Integer.parseInt(shareString[0]), new BigInteger(shareString[1]));
+            }
+            System.out.println("Retreived all shares for online members successfully");
+        } catch (Exception e) {
+            System.out.println("Error retreiving online status for participants!");
+        }
+        return shares;
+    }
+
+    public ArrayList<String> getOnlineNames() {
+        ArrayList<String> names = new ArrayList();
+        try {
+            PS = C.prepareStatement("SELECT * FROM participants WHERE online_status=?");
+            PS.setString(1, "Y");
+            ResultSet RS = PS.executeQuery();
+            while (RS.next()) {
+                String temp = RS.getString("fname") + " " + RS.getString("lname");
+                names.add(temp);
+            }
+            System.out.println("Retreived all names for online members successfully");
+        } catch (Exception e) {
+            System.out.println("Error retreiving online status for participants!");
+        }
+        return names;
     }
 
     public boolean verifyOTP(String guid, String otp) {
